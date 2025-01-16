@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './Login.css';
 
 function Login() {
@@ -33,7 +34,12 @@ function Login() {
             Entrar
           </button>
           <hr className="border-slate-800 w-full" />
-          <p>Ainda não tem uma conta? Cadastre-se</p>
+          <p>
+            Ainda não tem uma conta?{' '}
+            <Link to="/cadastro" className="text-indigo-800 hover:underline">
+              Cadastre-se
+            </Link>
+          </p>
         </form>
         <div className="fundoLogin hidden lg:block"></div>
       </div>

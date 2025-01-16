@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router';
-import './Cadastro.css';
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Usuario from '../../models/Usuario';
 import { cadastrarUsuario } from '../../services/Service';
+import './Cadastro.css';
 import { RotatingLines } from 'react-loader-spinner';
 
 function Cadastro() {
@@ -21,7 +21,7 @@ function Cadastro() {
   });
 
   useEffect(() => {
-    if (usuario.id! == 0) {
+    if (usuario.id !== 0) {
       retornar();
     }
   }, [usuario]);
@@ -48,7 +48,7 @@ function Cadastro() {
       setIsLoading(true);
 
       try {
-        await cadastrarUsuario(`/usuario/cadastrar`, usuario, setUsuario);
+        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
         alert('Usuário cadastrado com sucesso!');
       } catch (error) {
         alert('Erro ao cadastrar o usuário!');
@@ -64,7 +64,9 @@ function Cadastro() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
+      <div
+        className="grid grid-cols-1 lg:grid-cols-2 h-screen 
+            place-items-center font-bold">
         <div className="fundoCadastro hidden lg:block"></div>
         <form
           className="flex justify-center items-center flex-col w-2/3 gap-3"
