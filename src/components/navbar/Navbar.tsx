@@ -1,6 +1,17 @@
-import { Link } from 'react-router';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
 
 function Navbar() {
+  const navigate = useNavigate();
+  const { handleLogout } = useContext(AuthContext);
+
+  function logout() {
+    handleLogout();
+    alert('O Usuário foi desconectado com sucesso!');
+    navigate('/');
+  }
+
   return (
     <>
       <div className="w-full flex justify-center py-4 bg-cyan-900 text-pink-200">
@@ -9,7 +20,12 @@ function Navbar() {
             Blog Pessoal
           </Link>
 
-          <div className="flex gap-4">Postagens | Temas | Cadastrar tema | Perfil | Sair</div>
+          <div className="flex gap-4">
+            Postagens | Temas | Cadastrar tema | Perfil |{' '}
+            <Link to="" onClick={logout} className="text-2xl font-bold">
+              Sair
+            </Link>
+          </div>
         </div>
       </div>
     </>
