@@ -66,12 +66,12 @@ function Cadastro() {
     <>
       <div
         className="grid grid-cols-1 lg:grid-cols-2 h-screen 
-            place-items-center font-bold ">
+            place-items-center font-semibold font-quicksand">
         <div className="fundoCadastro hidden lg:block"></div>
         <form
           className="flex justify-center items-center flex-col w-2/3 gap-3"
           onSubmit={cadastrarNovoUsuario}>
-          <h2 className="text-cyan-900 text-5xl">Cadastrar</h2>
+          <h2 className="text-dark-blue text-5xl">Cadastrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input
@@ -79,7 +79,7 @@ function Cadastro() {
               id="nome"
               name="nome"
               placeholder="Nome"
-              className="border-2 border-cyan-900 rounded-xl p-2"
+              className="border-2 border-dark-blue rounded-xl p-2"
               value={usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -91,7 +91,7 @@ function Cadastro() {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="border-2 border-cyan-900 rounded-xl p-2"
+              className="border-2 border-dark-blue rounded-xl p-2"
               value={usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -103,7 +103,7 @@ function Cadastro() {
               id="foto"
               name="foto"
               placeholder="Foto"
-              className="border-2 border-cyan-900 rounded-xl p-2"
+              className="border-2 border-dark-blue rounded-xl p-2"
               value={usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -115,7 +115,7 @@ function Cadastro() {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-cyan-900 rounded-xl p-2"
+              className="border-2 border-dark-blue rounded-xl p-2"
               value={usuario.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -127,22 +127,22 @@ function Cadastro() {
               id="confirmarSenha"
               name="confirmarSenha"
               placeholder="Confirmar Senha"
-              className="border-2 border-cyan-900 rounded-xl p-2"
+              className="border-2 border-dark-blue rounded-xl p-2"
               value={confirmaSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
             />
           </div>
           <div className="flex justify-around w-full gap-8">
             <button
-              className="rounded-xl text-white bg-pink-700
-                  hover:bg-pink-400 w-1/2 py-2"
+              className="rounded-xl text-dark-blue bg-light-pink
+                  hover:bg-pink-purple w-1/2 py-2"
               onClick={retornar}>
               Cancelar
             </button>
             <button
               type="submit"
-              className="rounded-xl text-white bg-cyan-900
-                           hover:bg-cyan-400 w-1/2 py-2
+              className="rounded-xl text-light-pink bg-dark-blue
+                           hover:bg-gray-blue w-1/2 py-2
                            flex justify-center">
               {isLoading ? (
                 <Oval

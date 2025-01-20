@@ -89,7 +89,7 @@ function FormTema() {
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
+    <div className="container flex flex-col items-center justify-center mx-auto font-quicksand">
       <h1 className="text-4xl text-center my-8">{id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}</h1>
 
       <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
@@ -99,14 +99,14 @@ function FormTema() {
             type="text"
             placeholder="Descreva aqui seu tema"
             name="descricao"
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-2 border-dark-blue rounded-2xl p-2"
             value={tema.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
         <button
-          className="rounded text-slate-100 bg-indigo-400 
-                     hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+          className="rounded-2xl text-slate-100 bg-dark-blue 
+                     hover:bg-gray-blue w-1/2 py-2 mx-auto flex justify-center"
           type="submit">
           {isLoading ? (
             <RotatingLines

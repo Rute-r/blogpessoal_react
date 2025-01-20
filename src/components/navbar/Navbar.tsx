@@ -14,9 +14,9 @@ function Navbar() {
 
   return (
     <>
-      <div className="w-full flex justify-center py-4 bg-cyan-900 text-pink-200">
+      <div className="w-full flex justify-center py-4 bg-dark-blue text-light-pink font-quicksand">
         <div className="container flex justify-between text-lg">
-          <Link to={'/home'} className="text-2xl font-bold">
+          <Link to={'/home'} className="text-2xl font-semibold">
             Blog Pessoal
           </Link>
 
@@ -30,7 +30,7 @@ function Navbar() {
               Cadastrar tema
             </Link>{' '}
             | Perfil |{' '}
-            <Link to="" onClick={logout} className="text-2xl font-bold">
+            <Link to="" onClick={logout} className="text-2xl font-semibold">
               Sair
             </Link>
           </div>

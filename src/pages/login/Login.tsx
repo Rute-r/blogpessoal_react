@@ -32,9 +32,9 @@ function Login() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bond">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-semibold font-quicksand">
         <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
-          <h2 className="text-cyan-900 text-5xl">Entrar</h2>
+          <h2 className="text-dark-blue text-5xl">Entrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="usuario">Usuário</label>
             <input
@@ -42,7 +42,7 @@ function Login() {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="border-2 border-cyan-900 rounded-xl p-2"
+              className="border-2 border-dark-blue rounded-xl p-2"
               value={usuarioLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -54,15 +54,15 @@ function Login() {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-cyan-900 rounded-xl p-2"
+              className="border-2 border-dark-blue rounded-xl p-2"
               value={usuarioLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <button
             type="submit"
-            className="rounded-xl bg-cyan-900 flex justify-center
-          hover:bg-cyan-400 hover:text-white text-pink-200 w-1/2 py-2">
+            className="rounded-xl bg-dark-blue flex justify-center
+          hover:bg-gray-blue text-white w-1/2 py-2">
             {isLoading ? (
               <Oval
                 visible={true}
@@ -77,10 +77,10 @@ function Login() {
               <span>Entrar</span>
             )}
           </button>
-          <hr className="border-slate-800 w-full" />
+          <hr className="border-dark-blue w-full" />
           <p>
             Ainda não tem uma conta?{' '}
-            <Link to="/cadastro" className="text-indigo-800 hover:underline">
+            <Link to="/cadastro" className="text-gray-blue hover:underline">
               Cadastre-se
             </Link>
           </p>
