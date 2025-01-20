@@ -9,7 +9,7 @@ function CardTemas() {
       <div className="flex">
         <Link
           to=""
-          className="w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2">
+          className="w-full text-slate-100 bg-indigo-400 hover:bg-indigo-900 flex items-center justify-center py-2">
           <button>Editar</button>
         </Link>
 
