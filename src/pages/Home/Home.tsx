@@ -18,9 +18,9 @@ function Home() {
 
           <div className="flex justify-center ">
             <img
-              src="https://ik.imagekit.io/wute/rutelogo_.png?updatedAt=1736965613021"
+              src="https://ik.imagekit.io/wute/2ba02cc8-8596-48b4-9598-efc5b56c1034_2Fcc4bbedd-0038-4366-a72a-f6bb6df51f3f.png?updatedAt=1737465730994"
               alt="Imagem Página Home"
-              className="w-1.5/3"
+              className="rounded-full"
             />
           </div>
         </div>
