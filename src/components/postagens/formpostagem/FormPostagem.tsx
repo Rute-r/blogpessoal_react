@@ -1,6 +1,6 @@
 function FormPostagem() {
   return (
-    <div className="container flex flex-col mx-auto items-center font-quicksand">
+    <div className="container flex flex-col mx-auto items-center font-quicksan">
       <h1 className="text-4xl text-center my-8">Cadastrar Postagem</h1>
 
       <form className="flex flex-col w-1/2 gap-4">
@@ -26,7 +26,7 @@ function FormPostagem() {
         </div>
         <div className="flex flex-col gap-2">
           <p>Tema da Postagem</p>
-          <select name="tema" id="tema" className="border p-2 border-dark-blue rounded-2xl">
+          <select name="tema" id="tema" className="border p-2 border-dark-blue rounded-2xl bg-pink-100">
             <option value="" selected disabled>
               Selecione um Tema
             </option>
