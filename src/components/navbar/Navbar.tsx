@@ -1,6 +1,7 @@
 import { ReactNode, useContext } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
+import { ToastAlerta } from '../../utils/ToastAlerta';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ function Navbar() {
 
   function logout() {
     handleLogout();
-    alert('O Usuário foi desconectado com sucesso!');
+    ToastAlerta('O Usuário foi desconectado com sucesso!', 'info');
     navigate('/');
   }
 

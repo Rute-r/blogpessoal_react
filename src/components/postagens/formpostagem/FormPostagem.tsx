@@ -5,6 +5,7 @@ import Postagem from '../../../models/Postagem';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
 import { Oval } from 'react-loader-spinner';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function FormPostagem() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ function FormPostagem() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      ToastAlerta('Você precisa estar logado', 'info');
       navigate('/');
     }
   }, [token]);
@@ -103,12 +104,12 @@ function FormPostagem() {
           },
         });
 
-        alert('Postagem atualizada com sucesso');
+        ToastAlerta('Postagem atualizada com sucesso', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao atualizar a Postagemr');
+          ToastAlerta('Erro ao atualizar a Postagem', 'erro');
         }
       }
     } else {
@@ -119,12 +120,12 @@ function FormPostagem() {
           },
         });
 
-        alert('Postagem cadastrada com sucesso');
+        ToastAlerta('Postagem cadastrada com sucesso', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao cadastrar a Postagem');
+          ToastAlerta('Erro ao cadastrar a Postagem', 'erro');
         }
       }
     }
@@ -168,19 +169,20 @@ function FormPostagem() {
         </div>
         <div className="flex flex-col gap-2">
           <p>Tema da Postagem</p>
-          <select name="tema" id="tema" className="border p-2 border-dark-blue rounded-2xl bg-pink-100"
-          onChange={(e) => buscarTemaPorId(e.currentTarget.value)}
-          >
+          <select
+            name="tema"
+            id="tema"
+            className="border p-2 border-dark-blue rounded-2xl bg-pink-100"
+            onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
             <option value="" selected disabled>
               Selecione um Tema
             </option>
 
             {temas.map((tema) => (
               <>
-              <option value={tema.id}>{tema.descricao}</option>
-            </>
+                <option value={tema.id}>{tema.descricao}</option>
+              </>
             ))}
-            
           </select>
         </div>
         <button
@@ -188,19 +190,19 @@ function FormPostagem() {
           className="rounded-2xl disabled:bg-gray-blue bg-dark-blue hover:bg-gray-purple
                                         text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
           disabled={carregandoTema}>
-          {isLoading ? 
-              <Oval
-                  visible={true}
-                  height="24"
-                  width="24"
-                  color="#fbcfe8"
-                  ariaLabel="oval-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                /> : 
-              <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
-                      
-          }
+          {isLoading ? (
+            <Oval
+              visible={true}
+              height="24"
+              width="24"
+              color="#fbcfe8"
+              ariaLabel="oval-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+            />
+          ) : (
+            <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
+          )}
         </button>
       </form>
     </div>
