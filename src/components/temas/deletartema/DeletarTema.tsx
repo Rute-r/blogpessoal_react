@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
 import { buscar, deletar } from '../../../services/Service';
-import { RotatingLines } from 'react-loader-spinner';
+import { Oval } from 'react-loader-spinner';
 
 function DeletarTema() {
   const navigate = useNavigate();
@@ -92,12 +92,14 @@ function DeletarTema() {
               className="w-full text-slate-100 bg-dark-blue hover:bg-gray-blue flex items-center justify-center"
               onClick={deletarTema}>
               {isLoading ? (
-                <RotatingLines
-                  strokeColor="white"
-                  strokeWidth="5"
-                  animationDuration="0.75"
-                  width="24"
+                <Oval
                   visible={true}
+                  height="24"
+                  width="24"
+                  color="#fbcfe8"
+                  ariaLabel="oval-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
                 />
               ) : (
                 <span>Sim</span>
