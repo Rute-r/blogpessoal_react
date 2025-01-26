@@ -25,7 +25,11 @@ function Perfil() {
 
       <img
         className="rounded-full w-56 mx-auto mt-[-8rem] border-7 border-white relative z-10"
-        src={usuario.foto}
+        src={
+          usuario.foto == ''
+            ? 'https://ik.imagekit.io/wute/writing.webp?updatedAt=1737122450000'
+            : usuario.foto
+        }
         alt={`Foto de perfil de ${usuario.nome}`}
       />
 
