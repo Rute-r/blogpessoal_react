@@ -10,7 +10,15 @@ function CardPostagens({ postagem }: CardPostagemProps) {
     <div className="border-x-dark-blue flex flex-col rounded-2xl overflow-hidden justify-between font-quicksand">
       <div>
         <div className="flex w-full bg-dark-blue py-2 px-4 items-center gap-4">
-          <img src={postagem.usuario?.foto} className="h-12 rounded-full" alt={postagem.usuario?.nome} />
+          <img
+            src={
+              postagem.usuario?.foto == ''
+                ? 'https://ik.imagekit.io/wute/writing.webp?updatedAt=1737122450000'
+                : postagem.usuario?.foto
+            }
+            className="h-12 rounded-full"
+            alt={postagem.usuario?.nome}
+          />
           <h3 className="text-light-pink text-lg font-semibold text-center uppercase">
             {postagem.usuario?.nome}
           </h3>
